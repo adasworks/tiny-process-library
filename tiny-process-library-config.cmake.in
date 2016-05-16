@@ -1,0 +1,6 @@
+if(NOT "@BUILD_SHARED_LIBS@")
+  set(CMAKE_THREAD_PREFER_PTHREAD 1)
+  set(THREADS_PREFER_PTHREAD_FLAG 1)
+  find_package(Threads REQUIRED)
+endif()
+include(${CMAKE_CURRENT_LIST_DIR}/tiny-process-library-targets.cmake)

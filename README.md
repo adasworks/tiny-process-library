@@ -34,3 +34,21 @@ cmake -G"MSYS Makefiles" .
 make
 ./examples
 ```
+
+### CMake usage
+
+If your CMake version is greater or equal to 2.8.11 a CMake config-module will
+be installed if you build the install target:
+
+    make install
+
+or with the more portable
+
+    cmake --build ... --target install ...
+
+The install target creates a config-module which you can find and use from
+you program:
+
+    find_package(tiny-process-library REQUIRED)
+    ...
+    target_link_libraries(<my-target> PRIVATE ::tiny-process-library)
